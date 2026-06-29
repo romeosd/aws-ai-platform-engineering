@@ -1,0 +1,130 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-wheel-metadata/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# Environment / secrets
+.env.local
+.env.*.local
+*.env
+config/aws_config.local.yaml
+config/secrets.yaml
+*.pem
+*.key
+
+# AWS
+.aws/
+aws-exports.js
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.cover
+*.py,cover
+nosetests.xml
+test-results/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+*.tar.gz
+*.zip
+
+# SageMaker
+sagemaker-pipeline-definition.json
+sm-pipeline-runs/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Data (never commit raw data)
+data/raw/
+data/processed/
+*.csv
+*.parquet
+*.json.gz
+!tests/**/*.json
+
+# Model artifacts
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+*.h5
+model-artifacts/
+
+# CDK
+infrastructure/cdk/cdk.out/
+infrastructure/cdk/*.js
+infrastructure/cdk/*.d.ts
+infrastructure/cdk/node_modules/
+
+# Terraform
+infrastructure/terraform/.terraform/
+infrastructure/terraform/*.tfstate
+infrastructure/terraform/*.tfstate.backup
+infrastructure/terraform/.terraform.lock.hcl
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
