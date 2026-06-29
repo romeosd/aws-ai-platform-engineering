@@ -1,0 +1,123 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aws-ai-platform-engineering"
+version = "1.0.0"
+description = "Production-grade AWS AI Platform Engineering — Bedrock, Agents, RAG, SageMaker, Guardrails, and beyond"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Ramy Amer" }]
+requires-python = ">=3.12"
+
+keywords = [
+    "aws", "bedrock", "sagemaker", "generative-ai", "agents",
+    "rag", "guardrails", "llm", "machine-learning", "mlops"
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    # AWS SDK
+    "boto3>=1.34.0",
+    "botocore>=1.34.0",
+
+    # Bedrock & AI
+    "anthropic>=0.28.0",
+    "langchain>=0.2.0",
+    "langchain-aws>=0.1.9",
+    "langchain-community>=0.2.0",
+
+    # Vector / Search
+    "opensearch-py>=2.6.0",
+    "faiss-cpu>=1.8.0",
+
+    # Data processing
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "pyarrow>=16.0.0",
+
+    # Document processing
+    "pypdf>=4.2.0",
+    "python-docx>=1.1.0",
+    "pillow>=10.3.0",
+
+    # ML / SageMaker
+    "sagemaker>=2.224.0",
+    "scikit-learn>=1.5.0",
+    "mlflow>=2.13.0",
+    "shap>=0.45.0",
+
+    # Utilities
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0.1",
+    "tenacity>=8.3.0",
+    "structlog>=24.2.0",
+    "rich>=13.7.0",
+    "httpx>=0.27.0",
+    "tiktoken>=0.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=5.0.0",
+    "pytest-mock>=3.14.0",
+    "moto[bedrock,s3,sagemaker,stepfunctions,comprehend,textract]>=5.0.0",
+    "black>=24.4.0",
+    "ruff>=0.4.0",
+    "mypy>=1.10.0",
+    "pre-commit>=3.7.0",
+    "ipykernel>=6.29.0",
+    "jupyter>=1.0.0",
+]
+
+notebooks = [
+    "ipykernel>=6.29.0",
+    "jupyter>=1.0.0",
+    "matplotlib>=3.9.0",
+    "seaborn>=0.13.0",
+    "plotly>=5.22.0",
+]
+
+[project.urls]
+Repository = "https://github.com/romeosd/aws-ai-platform-engineering"
+Documentation = "https://github.com/romeosd/aws-ai-platform-engineering/tree/main/docs"
+Issues = "https://github.com/romeosd/aws-ai-platform-engineering/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "PT"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-v --cov=src --cov-report=term-missing --cov-report=html"
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*", "notebooks/*"]
