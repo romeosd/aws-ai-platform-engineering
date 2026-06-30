@@ -1,5 +1,7 @@
 # AWS AI Platform Engineering
 
+![Cross-Cloud AgentOps Architecture](docs/images/ibm_multicloud_agentops.png)
+
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-Bedrock%20%7C%20SageMaker%20%7C%20Textract-orange?logo=amazonaws&logoColor=white)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green)
